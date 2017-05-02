@@ -16,7 +16,7 @@ public Length() { super() ; }
 	@Override
 	public NodeValue exec(NodeValue v) {
 		Node n = v.asNode();
-		obj = OGCGeometry.fromText(n.toString().replace("\"", "")); // remove quotes so that op can parse wkt
+		obj = OGCGeometry.fromText(n.toString().replace("\"", ""));
 		length = obj.getEsriGeometry().calculateLength2D();
 		return NodeValue.parse(length.toString());
 	}
