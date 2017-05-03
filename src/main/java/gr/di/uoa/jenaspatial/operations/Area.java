@@ -5,6 +5,9 @@ import org.apache.jena.sparql.expr.NodeValue;
 import org.apache.jena.sparql.function.FunctionBase1;
 import com.esri.core.geometry.ogc.OGCGeometry;
 import com.esri.core.geometry.ogc.OGCPolygon;
+
+import gr.di.uoa.jenaspatial.utils.PrepareWKT;
+
 import com.esri.core.geometry.ogc.OGCMultiPolygon;
 
 
@@ -19,7 +22,7 @@ public Area() { super() ; }
 	@Override
 	public NodeValue exec(NodeValue v) {
 		Node n = v.asNode();
-		obj = OGCGeometry.fromText(n.toString().replace("\"", ""));
+		obj = OGCGeometry.fromText(PrepareWKT.prepare(n.toString()));
 		if(obj instanceof OGCMultiPolygon){
 			area = ((OGCMultiPolygon) obj).area();
 		}

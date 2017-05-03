@@ -5,6 +5,8 @@ import org.apache.jena.sparql.expr.NodeValue;
 import org.apache.jena.sparql.function.FunctionBase2;
 import com.esri.core.geometry.ogc.OGCGeometry;
 
+import gr.di.uoa.jenaspatial.utils.PrepareWKT;
+
 /* uses buffer from com.esri.core.geometry.ogc.OGCGeometry; */
 public class Buffer extends FunctionBase2{
 	
@@ -18,7 +20,7 @@ public Buffer() { super() ; }
 	public NodeValue exec(NodeValue v1, NodeValue v2) {
 		Node n = v1.asNode();
 		distance = v2.getDouble();	
-		obj = OGCGeometry.fromText(n.toString().replace("\"", ""));
+		obj = OGCGeometry.fromText(PrepareWKT.prepare(n.toString()));
 		
 		OGCGeometry result = obj.buffer(distance);
 		

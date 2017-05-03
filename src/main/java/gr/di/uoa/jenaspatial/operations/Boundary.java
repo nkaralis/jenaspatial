@@ -6,6 +6,8 @@ import org.apache.jena.sparql.function.FunctionBase1;
 
 import com.esri.core.geometry.ogc.OGCGeometry;
 
+import gr.di.uoa.jenaspatial.utils.PrepareWKT;
+
 /* uses boundary from com.esri.core.geometry.ogc.OGCGeometry; */
 public class Boundary extends FunctionBase1{
 	
@@ -16,7 +18,7 @@ public Boundary() { super() ; }
 	@Override
 	public NodeValue exec(NodeValue v) {
 		Node n = v.asNode();
-		obj = OGCGeometry.fromText(n.toString().replace("\"", ""));
+		obj = OGCGeometry.fromText(PrepareWKT.prepare(n.toString()));
 		
 		OGCGeometry result = obj.boundary();
 		
