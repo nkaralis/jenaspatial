@@ -28,21 +28,21 @@ public Relate() { super() ; }
 		relation = relation.substring(relation.lastIndexOf("#") + 1);
 		
 		boolean result;
-		if(relation.compareToIgnoreCase("intersects") == 0)
+		if(relation.compareToIgnoreCase("sfintersects") == 0)
 			result = obj1.intersects(obj2);
-		else if(relation.compareToIgnoreCase("equals") == 0)
+		else if(relation.compareToIgnoreCase("sfequals") == 0)
 			result = obj1.equals(obj2);
-		else if(relation.compareToIgnoreCase("contains") == 0)
+		else if(relation.compareToIgnoreCase("sfcontains") == 0)
 			result = obj1.contains(obj2);
-		else if(relation.compareToIgnoreCase("crosses") == 0)
+		else if(relation.compareToIgnoreCase("sfcrosses") == 0)
 			result = obj1.crosses(obj2);
-		else if(relation.compareToIgnoreCase("disjoint") == 0)
+		else if(relation.compareToIgnoreCase("sfdisjoint") == 0)
 			result = obj1.disjoint(obj2);
-		else if(relation.compareToIgnoreCase("overlaps") == 0)
+		else if(relation.compareToIgnoreCase("sfoverlaps") == 0)
 			result = obj1.overlaps(obj2);
-		else if(relation.compareToIgnoreCase("touches") == 0)
+		else if(relation.compareToIgnoreCase("sftouches") == 0)
 			result = obj1.touches(obj2);
-		else if(relation.compareToIgnoreCase("within") == 0)
+		else if(relation.compareToIgnoreCase("sfwithin") == 0)
 			result = obj1.within(obj2);
 		else
 			throw new IllegalArgumentException("Relation must be: intersects, equals, touches, within, contains, crosses, disjoint, overlaps");
