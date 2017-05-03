@@ -8,7 +8,7 @@ import com.esri.core.geometry.ogc.OGCPolygon;
 import com.esri.core.geometry.ogc.OGCMultiPolygon;
 
 
-/* uses ST_Area from com.esri.hadoop.hive.ST_Area */
+/* uses area from com.esri.core.geometry.ogc.OGCSurface/OGCMultiSurface */
 public class Area extends FunctionBase1{
 	
 public Area() { super() ; }

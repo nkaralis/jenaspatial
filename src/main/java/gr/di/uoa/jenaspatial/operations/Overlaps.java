@@ -5,7 +5,7 @@ import org.apache.jena.sparql.expr.NodeValue;
 import org.apache.jena.sparql.function.FunctionBase2;
 import com.esri.core.geometry.ogc.OGCGeometry;
 
-/* uses contains from com.esri.core.geometry.ogc.OGCGeometry; */
+/* uses overlaps from com.esri.core.geometry.ogc.OGCGeometry; */
 public class Overlaps extends FunctionBase2{
 	
 public Overlaps() { super() ; }

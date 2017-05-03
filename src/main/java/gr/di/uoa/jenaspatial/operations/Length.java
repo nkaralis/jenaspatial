@@ -5,7 +5,7 @@ import org.apache.jena.sparql.expr.NodeValue;
 import org.apache.jena.sparql.function.FunctionBase1;
 import com.esri.core.geometry.ogc.OGCGeometry;
 
-/* uses com.esri.hadoop.hive.ST_Length */
+/*uses length from com.esri.core.geometry.Geometry */
 public class Length extends FunctionBase1{
 	
 public Length() { super() ; }

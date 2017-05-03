@@ -5,7 +5,7 @@ import org.apache.jena.sparql.expr.NodeValue;
 import org.apache.jena.sparql.function.FunctionBase2;
 import com.esri.core.geometry.ogc.OGCGeometry;
 
-/* uses distance from com.esri.core.geometry.ogc.OGCGeometry; */
+/* uses buffer from com.esri.core.geometry.ogc.OGCGeometry; */
 public class Buffer extends FunctionBase2{
 	
 public Buffer() { super() ; }

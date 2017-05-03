@@ -3,12 +3,13 @@ package gr.di.uoa.jenaspatial.operations;
 import org.apache.jena.graph.Node;
 import org.apache.jena.sparql.expr.NodeValue;
 import org.apache.jena.sparql.function.FunctionBase2;
+
 import com.esri.core.geometry.ogc.OGCGeometry;
 
-/* uses within from com.esri.core.geometry.ogc.OGCGeometry; */
-public class Within extends FunctionBase2{
+/* uses crosses from com.esri.core.geometry.ogc.OGCGeometry; */
+public class Crosses extends FunctionBase2{
 	
-public Within() { super() ; }
+public Crosses() { super() ; }
 	
 	
 	private OGCGeometry obj;
@@ -21,7 +22,7 @@ public Within() { super() ; }
 		obj = OGCGeometry.fromText(n1.toString().replace("\"", ""));
 		obj2 = OGCGeometry.fromText(n2.toString().replace("\"", ""));
 		
-		boolean result = obj.within(obj2);
+		boolean result = obj.crosses(obj2);
 		if(result)
 			return NodeValue.parse("true");
 		else
