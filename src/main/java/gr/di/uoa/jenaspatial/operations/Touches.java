@@ -25,10 +25,7 @@ public Touches() { super() ; }
 		obj2 = OGCGeometry.fromText(PrepareWKT.prepare(n2.toString()));
 		
 		boolean result = obj1.touches(obj2);
-		if(result)
-			return NodeValue.parse("true");
-		else
-			return NodeValue.parse("false");
+		return NodeValue.booleanReturn(result);
 		
 		
 	}

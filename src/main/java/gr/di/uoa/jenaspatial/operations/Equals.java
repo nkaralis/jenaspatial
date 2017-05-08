@@ -23,12 +23,9 @@ public Equals() { super() ; }
 		Node n2 = v2.asNode();			
 		obj1 = OGCGeometry.fromText(PrepareWKT.prepare(n1.toString()));
 		obj2 = OGCGeometry.fromText(PrepareWKT.prepare(n2.toString()));
-		
+				
 		boolean result = obj1.equals(obj2);
-		if(result)
-			return NodeValue.parse("true");
-		else
-			return NodeValue.parse("false");
+		return NodeValue.booleanReturn(result);
 		
 		
 	}
